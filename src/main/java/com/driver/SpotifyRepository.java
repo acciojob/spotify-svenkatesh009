@@ -98,7 +98,7 @@ public class SpotifyRepository {
                 return song;
             }
         }
-        throw new RuntimeException("Album does not exist");
+        throw new Exception("Album does not exist");
     }
 
 
@@ -115,7 +115,7 @@ public class SpotifyRepository {
                     break;
                 }
             }
-            if(!userfound) throw new RuntimeException("User does not exist");
+            if(!userfound) throw new Exception("User does not exist");
               Playlist playlist=new Playlist(title);
               playlists.add(playlist);
               List<Song> newList=new ArrayList<>();
@@ -156,7 +156,7 @@ public class SpotifyRepository {
                 break;
             }
         }
-        if(!userfound) throw new RuntimeException("User does not exist");
+        if(!userfound) throw new Exception("User does not exist");
         Playlist playlist=new Playlist(title);
         playlists.add(playlist);
         List<Song> newList=new ArrayList<>();
@@ -201,7 +201,7 @@ public class SpotifyRepository {
                 break;
             }
         }
-        if(!userfound) throw new RuntimeException("User does not exist");
+        if(!userfound) throw new Exception("User does not exist");
         Playlist pl=new Playlist();
         boolean playListFound=false;
         for(Playlist playlist:playlists){
@@ -211,7 +211,7 @@ public class SpotifyRepository {
                 break;
             }
         }
-        if(!playListFound) throw new RuntimeException("Playlist does not exist");
+        if(!playListFound) throw new Exception("Playlist does not exist");
             List<User> userdata=playlistListenerMap.get(pl);
             boolean present=false;
             for(User user1:userdata){
@@ -239,7 +239,7 @@ public class SpotifyRepository {
                 break;
             }
         }
-        if(!userfound) throw new RuntimeException("User does not exist");
+        if(!userfound) throw new Exception("User does not exist");
         Song song=new Song();
         boolean songFound=false;
         for (Song song1:songs){
@@ -249,7 +249,7 @@ public class SpotifyRepository {
                 break;
             }
         }
-        if(!songFound) throw new RuntimeException("Song does not exist");
+        if(!songFound) throw new Exception("Song does not exist");
         if(songLikeMap.containsKey(song)){
             List<User> userList=songLikeMap.get(song);
             for(User user1:userList){
