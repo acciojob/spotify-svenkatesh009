@@ -111,11 +111,6 @@ public class SpotifyRepository {
             song.setLikes(0);
 
             songs.add(song);
-
-//            List<Song> l = albumSongMap.get(album);
-//            l.add(song);
-//            albumSongMap.put(album,l);
-
             if(albumSongMap.containsKey(album)){
                 List<Song> l = albumSongMap.get(album);
                 l.add(song);
@@ -161,10 +156,6 @@ public class SpotifyRepository {
 
             creatorPlaylistMap.put(user,playlist);
 
-//            List<Playlist> userPlayList = userPlaylistMap.get(user);  //error possibility
-//            userPlayList.add(playlist);
-//            userPlaylistMap.put(user,userPlayList);
-
             if(userPlaylistMap.containsKey(user)){
                 List<Playlist> userPlayList = userPlaylistMap.get(user);
                 userPlayList.add(playlist);
@@ -181,10 +172,6 @@ public class SpotifyRepository {
     }
 
     public Playlist createPlaylistOnName(String mobile, String title, List<String> songTitles) throws Exception {
-
-        //Create a playlist with given title and add all songs having the given titles in the database to that playlist
-        //The creater of the playlist will be the given user and will also be the only listener at the time of playlist creation
-        //If the user does not exist, throw "User does not exist" exception
 
         User user = null;
         for(User user1:users){
@@ -231,11 +218,6 @@ public class SpotifyRepository {
 
     public Playlist findPlaylist(String mobile, String playlistTitle) throws Exception {
 
-        //Find the playlist with given title and add user as listener of that playlist and update user accordingly
-        //If the user is creater or already a listener, do nothing
-        //If the user does not exist, throw "User does not exist" exception
-        //If the playlist does not exists, throw "Playlist does not exist" exception
-        // Return the playlist after updating
 
         User user = null;
         for(User user1:users){
@@ -281,12 +263,6 @@ public class SpotifyRepository {
 
     public Song likeSong(String mobile, String songTitle) throws Exception {
 
-        //The user likes the given song. The corresponding artist of the song gets auto-liked
-        //A song can be liked by a user only once. If a user tried to like a song multiple times, do nothing
-        //However, an artist can indirectly have multiple likes from a user, if the user has liked multiple songs of that artist.
-        //If the user does not exist, throw "User does not exist" exception
-        //If the song does not exist, throw "Song does not exist" exception
-        //Return the song after updating
 
         User user = null;
         for(User user1:users){
