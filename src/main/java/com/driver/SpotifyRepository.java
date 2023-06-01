@@ -307,6 +307,7 @@ public class SpotifyRepository {
                 mostLiked=artist.getName();
             }
         }
+        if(mostLiked==null) return null;
         return mostLiked;
     }
 
@@ -321,6 +322,7 @@ public class SpotifyRepository {
                 mostLiked=song.getTitle();
             }
         }
+        if(mostLiked==null) return null;
         return mostLiked;
     }
 }

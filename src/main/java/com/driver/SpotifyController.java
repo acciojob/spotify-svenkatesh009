@@ -42,7 +42,7 @@ public class SpotifyController {
             return "Success";
         }
         catch(RuntimeException ex){
-            return ex.getMessage();
+            throw  ex;
         }
 //        return "Success";
     }
@@ -57,7 +57,7 @@ public class SpotifyController {
             return "Success";
         }
         catch(RuntimeException ex){
-            return ex.getMessage();
+            throw  ex;
         }
 //        return "Success";
     }
@@ -72,7 +72,7 @@ public class SpotifyController {
             return "Success";
         }
         catch (RuntimeException ex){
-            return ex.getMessage();
+            throw  ex;
         }
 //        return "Success";
     }
@@ -89,7 +89,7 @@ public class SpotifyController {
             return "Success";
         }
         catch(RuntimeException ex){
-            return ex.getMessage();
+            throw  ex;
         }
 //        return "Success";
     }
@@ -107,7 +107,7 @@ public class SpotifyController {
             return "Success";
         }
         catch(RuntimeException ex){
-            return ex.getMessage();
+            throw  ex;
         }
 //        return "Success";
     }
