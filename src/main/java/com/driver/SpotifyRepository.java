@@ -98,7 +98,7 @@ public class SpotifyRepository {
                 return song;
             }
         }
-        throw new RuntimeException();
+        throw new RuntimeException("Album does not exist");
     }
 
 
@@ -115,7 +115,7 @@ public class SpotifyRepository {
                     break;
                 }
             }
-            if(!userfound) throw new RuntimeException();
+            if(!userfound) throw new RuntimeException("User does not exist");
               Playlist playlist=new Playlist(title);
               playlists.add(playlist);
               List<Song> newList=new ArrayList<>();
@@ -156,7 +156,7 @@ public class SpotifyRepository {
                 break;
             }
         }
-        if(!userfound) throw new RuntimeException();
+        if(!userfound) throw new RuntimeException("User does not exist");
         Playlist playlist=new Playlist(title);
         playlists.add(playlist);
         List<Song> newList=new ArrayList<>();
