@@ -302,7 +302,7 @@ public class SpotifyRepository {
         String mostLiked=null;
         int max=0;
         for(Artist artist:artists){
-            if(artist.getLikes()>max){
+            if(artist.getLikes()>=max){
                 max=artist.getLikes();
                 mostLiked=artist.getName();
             }
@@ -316,7 +316,7 @@ public class SpotifyRepository {
         String mostLiked=null;
         int max=0;
         for(Song song: songs){
-            if(song.getLikes()>max){
+            if(song.getLikes()>=max){
                 max=song.getLikes();
                 mostLiked=song.getTitle();
             }
